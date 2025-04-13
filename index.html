@@ -6,15 +6,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kmri Cricker</title>
   <script src="https://content.jwplatform.com/libraries/KB5zFt7A.js"></script>
+  <style>
+    body {
+      background-color: black; /* Set background color to black */
+      margin: 0; /* Remove default margin */
+      display: flex; /* Use flexbox for centering */
+      flex-direction: column; /* Stack elements vertically */
+      justify-content: center; /* Center horizontally */
+      align-items: center; /* Center vertically */
+      height: 100vh; /* Full viewport height */
+    }
+
+    #video {
+      width: 100%; /* Full width */
+      max-width: 800px; /* Maximum width for larger screens */
+      aspect-ratio: 16 / 9; /* Maintain 16:9 aspect ratio */
+    }
+
+    .telegram-button {
+      background-color: #0074d9; /* Button background color */
+      color: #fff; /* Button text color */
+      border: none; /* Remove border */
+      padding: 10px 20px; /* Padding for the button */
+      cursor: pointer; /* Pointer cursor on hover */
+      margin-top: 20px; /* Space above the button */
+    }
+
+    .telegram-button:hover {
+      background-color: #005bb5; /* Darker blue on hover */
+    }
+  </style>
 </head>
 <body>
-  <!-- Telegram Join Prompt -->
-  <script type="text/javascript">
-    if (confirm("Join Our Telegram Channel For Latest Update") == true) {
-      window.open("https://t.me/+QRdNAmX47sNkNWFl", '_blank');
-    }
-  </script>
-
   <div id="video"></div>
 
   <script type="text/javascript">
@@ -22,17 +45,24 @@
       image: "https://i.postimg.cc/9XGtny3q/IMG-20250221-222251-004.jpg",
       width: "100%",
       aspectratio: "16:9",
-      autostart: "false",
+      autostart: false,
       primary: "html5",
       preload: "auto",
-      mute: "false",
+      mute: false,
       file: "https://v18tataplaysyndication.akamaized.net/bpk-tv/StarSports_2_Tam_voot_MOB/output03/index.m3u8?hdnea=exp=1744546500~acl=/*~hmac=1359ccf3c8bb35aef3470db24fd9923da85aceb17de1c05de58496efd5ac71ad"
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+      // Show the Telegram confirmation dialog on page load
+      if (confirm("Join Our Telegram Channel For Latest Update?")) {
+        window.open("https://t.me/+QRdNAmX47sNkNWFl", '_blank');
+      }
     });
   </script>
 
-  <div style="background-color: #0074d9; text-align: center; padding: 10px;">
+  <div style="text-align: center;">
     <a href="https://t.me/+QRdNAmX47sNkNWFl" target="_blank">
-      <button id="joinTelegramButton" style="background-color: #fff; color: #0074d9; border: 2px solid #0074d9; padding: 5px 10px;">Join Telegram</button>
+      <button class="telegram-button">Join Telegram</button>
     </a>
   </div>
 </body>
